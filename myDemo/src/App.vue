@@ -25,10 +25,7 @@
           </el-form-item>
           <el-form-item>
             <el-button @click="resetQuery">重置</el-button>
-            <!-- 、、、、、、、、、、、、、、、、、、、、、、 -->
-            {{ obj }}
-            <el-button @click="showName">点击</el-button>
-            <!-- 、、、、、、、、、、、、、、、、、、、、、、 -->
+
           </el-form-item>
         </el-form>
       </div>
@@ -89,20 +86,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { reactive, ref, onMounted, toRefs, toRaw } from "vue";
+import { reactive, ref, onMounted, } from "vue";
 import { ElTable, ElMessage } from "element-plus";
 import { Search } from "@element-plus/icons-vue";
 import { deleteList, getList, article } from "@/apis/index";
-// ------------------------
-const obj = reactive({ name: 'lisa', age: 24 })
 
-const showName = () => {
-
-  let newObj = toRaw(obj)
-
-  console.log(obj, newObj);
-}
-// ---------------------------
 const formInline = reactive({
   keyword: null,
   startTime: null,
